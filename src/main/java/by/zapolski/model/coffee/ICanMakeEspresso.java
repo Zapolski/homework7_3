@@ -1,4 +1,4 @@
-package by.zapolski.model;
+package by.zapolski.model.coffee;
 
 import by.zapolski.exception.CoffeeMachineException;
 

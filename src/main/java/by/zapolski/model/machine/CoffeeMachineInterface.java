@@ -1,4 +1,4 @@
-package by.zapolski.model;
+package by.zapolski.model.machine;
 
 public interface CoffeeMachineInterface {
     void enable();
@@ -7,4 +7,6 @@ public interface CoffeeMachineInterface {
 
     void fillWaterContainer(int waterMl);
     void fillCoffeeContainer(int coffeeGr);
+
+
 }

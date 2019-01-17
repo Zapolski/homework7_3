@@ -1,7 +1,7 @@
-package by.zapolski.model;
+package by.zapolski.model.coffee;
 
 import by.zapolski.exception.CoffeeMachineException;
 
 public interface ICanMakeCappuccino {
-    Cappuccino makeCappuccino() throws CoffeeMachineException;
+    Cuppuccino makeCappuccino(int milkML) throws CoffeeMachineException;
 }
