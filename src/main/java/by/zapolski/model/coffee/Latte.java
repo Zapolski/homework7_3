@@ -1,6 +1,6 @@
 package by.zapolski.model.coffee;
 
-public class Late {
+public class Latte {
     public final static int COFFEE = 22;
     public final static int WATER = 30;
 }

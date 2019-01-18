@@ -11,8 +11,8 @@ import org.junit.Test;
 public class HomeMachineAmericanoTests extends HomeMachineBaseTest {
     @Test
     public void makeAmericanoEnoughWaterAndCoffee()throws CoffeeMachineException {
-        Americano cap = homeCoffeeMachineWithEverything.makeAmericano();
-        Assert.assertNotNull(cap);
+        Americano amer = homeCoffeeMachineWithEverything.makeAmericano();
+        Assert.assertNotNull(amer);
     }
     @Test(expected = NoCoffeeException.class)
     public void makeAmericanoWithoutCoffee()throws CoffeeMachineException{

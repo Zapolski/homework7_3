@@ -3,7 +3,7 @@ package by.zapolski.model.machine;
 import by.zapolski.exception.*;
 import by.zapolski.model.coffee.*;
 
-public class ExtendedCoffeeMachine extends CoffeeMachineAbstract implements ICanMakeLate,
+public class ExtendedCoffeeMachine extends CoffeeMachineAbstract implements ICanMakeLatte,
         ICanMakeCappuccino, ICanMakeAmericano, ICanMakeEspresso {
 
     int milkContainer;
@@ -44,34 +44,34 @@ public class ExtendedCoffeeMachine extends CoffeeMachineAbstract implements ICan
         return new Espresso();
     }
 
-    public Cuppuccino makeCappuccino(int milkMl) throws CoffeeMachineException {
-        if (waterContainer<Cuppuccino.WATER) throw new NoWaterException("NO WATER");
-        if (coffeeContainer<Cuppuccino.COFFEE) throw new NoCoffeeException("NO COFFEE");
+    public Cappuccino makeCappuccino(int milkMl) throws CoffeeMachineException {
+        if (waterContainer< Cappuccino.WATER) throw new NoWaterException("NO WATER");
+        if (coffeeContainer< Cappuccino.COFFEE) throw new NoCoffeeException("NO COFFEE");
         if (milkContainer<milkMl) throw new NoMilkException("NO MILK");
 
-        if ((wasteContainer+Cuppuccino.COFFEE)>WASTE_LIMIT_GR) throw new WasteOverflowException("WASTE OVERFLOW");
+        if ((wasteContainer+ Cappuccino.COFFEE)>WASTE_LIMIT_GR) throw new WasteOverflowException("WASTE OVERFLOW");
 
-        coffeeContainer -= Cuppuccino.COFFEE;
-        waterContainer -= Cuppuccino.WATER;
+        coffeeContainer -= Cappuccino.COFFEE;
+        waterContainer -= Cappuccino.WATER;
         milkContainer -= milkMl;
 
-        wasteContainer += Cuppuccino.COFFEE;
-        return new Cuppuccino();
+        wasteContainer += Cappuccino.COFFEE;
+        return new Cappuccino();
     }
 
-    public Late makeLate(int milkMl) throws CoffeeMachineException {
-        if (waterContainer<Late.WATER) throw new NoWaterException("NO WATER");
-        if (coffeeContainer<Late.COFFEE) throw new NoCoffeeException("NO COFFEE");
+    public Latte makeLate(int milkMl) throws CoffeeMachineException {
+        if (waterContainer< Latte.WATER) throw new NoWaterException("NO WATER");
+        if (coffeeContainer< Latte.COFFEE) throw new NoCoffeeException("NO COFFEE");
         if (milkContainer<milkMl) throw new NoMilkException("NO MILK");
 
-        if ((wasteContainer+Late.COFFEE)>WASTE_LIMIT_GR) throw new WasteOverflowException("WASTE OVERFLOW");
+        if ((wasteContainer+ Latte.COFFEE)>WASTE_LIMIT_GR) throw new WasteOverflowException("WASTE OVERFLOW");
 
-        coffeeContainer -= Late.COFFEE;
-        waterContainer -= Late.WATER;
+        coffeeContainer -= Latte.COFFEE;
+        waterContainer -= Latte.WATER;
         milkContainer -= milkMl;
 
-        wasteContainer += Late.COFFEE;
-        return new Late();
+        wasteContainer += Latte.COFFEE;
+        return new Latte();
     }
 
     public int getCoffeeLimitGr() {
